@@ -1,8 +1,5 @@
 package minitwitter;
 
-import javax.swing.JTree;
-import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -20,7 +17,11 @@ public class UserTree extends TreeView{
     public void addUser(String userID){
         DefaultTreeModel model = (DefaultTreeModel)tree.getModel();
         DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
-        root.add(new DefaultMutableTreeNode(new IndividualUser(userID)));
+        if(!selectedNode.isLeaf()){
+            selectedNode.add(new DefaultMutableTreeNode(new IndividualUser(userID)));
+        }else{
+            root.add(new DefaultMutableTreeNode(new IndividualUser(userID)));
+        }
         model.reload(root);
     }
     

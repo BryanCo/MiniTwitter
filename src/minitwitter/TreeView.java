@@ -15,6 +15,7 @@ import javax.swing.tree.TreeSelectionModel;
  */
 abstract class TreeView extends JPanel implements TreeSelectionListener {
     protected JTree tree;
+    protected DefaultMutableTreeNode selectedNode;
     
     TreeView(String treeName){
         DefaultMutableTreeNode root = new DefaultMutableTreeNode(treeName);
@@ -23,6 +24,7 @@ abstract class TreeView extends JPanel implements TreeSelectionListener {
         this.tree.setEditable(true);
         this.tree.getSelectionModel().setSelectionMode
                 (TreeSelectionModel.SINGLE_TREE_SELECTION);
+        selectedNode = (DefaultMutableTreeNode)this.tree.getModel().getRoot();
         JScrollPane t = new JScrollPane(this.tree);
         this.tree.addTreeSelectionListener(this);
         this.setLayout(new BorderLayout());
@@ -38,15 +40,19 @@ abstract class TreeView extends JPanel implements TreeSelectionListener {
         return tree;
     }
     
+    public DefaultMutableTreeNode getSelectedNode(){
+        return selectedNode;
+    }
+    
     @Override
     public void valueChanged(TreeSelectionEvent se) {
         JTree selectTree = (JTree) se.getSource();
-        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) selectTree
-            .getLastSelectedPathComponent();
+        this.selectedNode = (DefaultMutableTreeNode)
+                selectTree.getLastSelectedPathComponent();
         
-        String selectedNodeName = selectedNode.toString();
-        if (selectedNode.isLeaf()) {
-          System.out.println(selectedNodeName);
-        }
+        //String selectedNodeName = selectedNode.toString();
+        //if (selectedNode.isLeaf()) {
+        //  System.out.println(selectedNodeName);
+        //}
     }
 }
