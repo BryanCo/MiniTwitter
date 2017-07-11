@@ -26,10 +26,13 @@ public class AdminWindow extends JFrame{
         
         this.add(tree);
         
-        JPanel controlPanel = new JPanel(new GridLayout(3,1));
+        JPanel controlPanel = new JPanel(new GridLayout(4,1));
         
-        TextBoxController t = new AddUserController(tree);
-        controlPanel.add(new TextBoxAction("UserID", "Add User", t));
+        TextBoxController addUserControllerInstance = new AddUserController(this.tree);
+        controlPanel.add(new TextBoxAction("UserID", "Add User", addUserControllerInstance));
+        
+        TextBoxController addGroupControllerInstance = new AddGroupController(this.tree);
+        controlPanel.add(new TextBoxAction("Group Name", "Add Group", addGroupControllerInstance));
         
         
         JButton openUsers = new JButton("Open User View");

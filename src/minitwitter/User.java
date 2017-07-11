@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package minitwitter;
 
 /**
@@ -10,5 +5,12 @@ package minitwitter;
  * @author Bryan
  */
 public interface User {
-    
+    public void tweet();
+    public void followUser();
+    public boolean isUserGroup();
+    public void notifyFollowers();
+    public void updateNewsFeed();
+    public void joinGroup();
+    public void acceptMember();
+    public void acceptFollower();
 }

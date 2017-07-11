@@ -33,6 +33,8 @@ abstract class TreeView extends JPanel implements TreeSelectionListener {
     
     public void addUser(String userID){}
     
+    public void addGroup(String groupName){}
+    
     public void addNode(){
     }
     

@@ -19,22 +19,27 @@ public class IndividualUser implements User {
     IndividualUser(String userID){
         this.userID = userID;
     }
+    @Override
     public void joinGroup(){
         
     }
     
+    @Override
     public void followUser(){
         
     }
     
+    @Override
     public void tweet(){
         
     }
     
+    @Override
     public void notifyFollowers(){
         
     }
     
+    @Override
     public void updateNewsFeed(){
         
     }
@@ -42,5 +47,20 @@ public class IndividualUser implements User {
     @Override
     public String toString(){
         return this.userID;
+    }
+
+    @Override
+    public boolean isUserGroup() {
+        return false;
+    }
+
+    @Override
+    public void acceptMember() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void acceptFollower() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
