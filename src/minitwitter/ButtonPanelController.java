@@ -6,14 +6,14 @@ import javax.swing.JTextField;
  *
  * @author Bryan
  */
-abstract class TextBoxController implements ControllerInterface {
+abstract class ButtonPanelController implements ControllerInterface{
     protected TreeView tree;
     
-    TextBoxController(TreeView tree){
+    ButtonPanelController(TreeView tree){
         this.tree = tree;
     }
 
-    public void doAction(JTextField textBox){
+    public void doAction() {
         
     }
 }
