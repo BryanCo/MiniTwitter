@@ -13,7 +13,7 @@ public class UserTree extends TreeView{
     
     public UserTree(String treeName) {
         super(treeName);
-        this.model = (DefaultTreeModel)tree.getModel();
+        this.model = (DefaultTreeModel)super.getTree().getModel();
         this.root = (DefaultMutableTreeNode)model.getRoot();
     }
     
@@ -21,14 +21,14 @@ public class UserTree extends TreeView{
     public void addUser(String userID){
         User o;
         try{
-            o = (User)selectedNode.getUserObject();
+            o = (User)super.getSelectedNode().getUserObject();
         }catch (ClassCastException e){
             o = new IndividualUser("root");
         }
         if(o.isUserGroup()){
-            selectedNode.add(new DefaultMutableTreeNode(new IndividualUser(userID)));
+            super.getSelectedNode().add(new DefaultMutableTreeNode(new IndividualUser(userID)));
         }else{
-            DefaultMutableTreeNode n = (DefaultMutableTreeNode)selectedNode.getParent();
+            DefaultMutableTreeNode n = (DefaultMutableTreeNode)super.getSelectedNode().getParent();
             try{
                 n.add(new DefaultMutableTreeNode(new IndividualUser(userID)));
             } catch (NullPointerException e){
@@ -42,14 +42,14 @@ public class UserTree extends TreeView{
     public void addGroup(String groupName){
         User o;
         try{
-            o = (User)selectedNode.getUserObject();
+            o = (User)super.getSelectedNode().getUserObject();
         }catch (ClassCastException e){
             o = new IndividualUser("root");
         }
         if(o.isUserGroup()){
-            selectedNode.add(new DefaultMutableTreeNode(new UserGroup(groupName)));
+            super.getSelectedNode().add(new DefaultMutableTreeNode(new UserGroup(groupName)));
         } else{
-            DefaultMutableTreeNode n = (DefaultMutableTreeNode)selectedNode.getParent();
+            DefaultMutableTreeNode n = (DefaultMutableTreeNode)super.getSelectedNode().getParent();
             try{
                 n.add(new DefaultMutableTreeNode(new UserGroup(groupName)));
             }catch (NullPointerException e){

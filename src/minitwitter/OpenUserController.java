@@ -12,6 +12,6 @@ class OpenUserController extends ButtonPanelController{
     
     @Override
     public void doAction(){
-        
+        new UserWindow(tree);
     }
 }

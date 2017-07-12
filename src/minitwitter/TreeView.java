@@ -14,8 +14,8 @@ import javax.swing.tree.TreeSelectionModel;
  * @author Bryan
  */
 abstract class TreeView extends JPanel implements TreeSelectionListener {
-    protected JTree tree;
-    protected DefaultMutableTreeNode selectedNode;
+    private JTree tree;
+    private DefaultMutableTreeNode selectedNode;
     
     TreeView(String treeName){
         DefaultMutableTreeNode root = new DefaultMutableTreeNode(treeName);
