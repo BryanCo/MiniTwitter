@@ -13,7 +13,9 @@ import javax.swing.JPanel;
  */
 public class AdminWindow extends JFrame{
     UserTree tree;
-    AdminWindow(){        
+    private static AdminWindow win = null; 
+    
+    private AdminWindow(){        
         this.setTitle("Mini Twitter - Admin");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -45,4 +47,14 @@ public class AdminWindow extends JFrame{
         this.setVisible(true);
     }
     
+    public static AdminWindow getInstance(){
+        if(win == null){
+            synchronized(AdminWindow.class){
+                if(win==null){
+                    win = new AdminWindow();
+                }
+            }
+        }
+        return win;
+    }
 }
