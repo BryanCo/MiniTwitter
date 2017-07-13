@@ -10,18 +10,28 @@ import javax.swing.JPanel;
  */
 public class UserFunctionsPanel extends JPanel {
     
-    UserFunctionsPanel(){
+    private TreeView tree;
+    
+    UserFunctionsPanel(TreeView tree){
+        this.tree = tree;
         this.setLayout(new GridLayout(2,2));
         
-        JButton showUserTotal = new JButton("Show User Total");
-        JButton showGroupTotal = new JButton("Show Group Total");
-        JButton showMessagesTotal = new JButton("Show Messages Total");
-        JButton showPositivePercentage = new JButton("Show Positive Percentage");
+        ShowUserTotalController showUserTotalController = new ShowUserTotalController(this.tree);
+        ShowUserTotalButton showUserTotalButton = new ShowUserTotalButton("Show User Total", showUserTotalController);
         
-        this.add(showUserTotal);
-        this.add(showGroupTotal);
-        this.add(showMessagesTotal);
-        this.add(showPositivePercentage);
+        ShowGroupTotalController showGroupTotalController = new ShowGroupTotalController(this.tree);
+        ShowGroupTotalButton showGroupTotalButton = new ShowGroupTotalButton("Show Group Total", showGroupTotalController);
+
+        ShowMessageTotalController showMessageTotalController = new ShowMessageTotalController(this.tree);
+        ShowMessageTotalButton showMessageTotalButton = new ShowMessageTotalButton("Show Messages Total", showMessageTotalController);
+        
+        ShowPositveTotalController showPositveTotalController = new ShowPositveTotalController(this.tree);
+        ShowPositiveTotalButton showPositiveTotalButton = new ShowPositiveTotalButton("Show Messages Total", showPositveTotalController);
+        
+        this.add(showUserTotalButton);
+        this.add(showGroupTotalButton);
+        this.add(showMessageTotalButton);
+        this.add(showPositiveTotalButton);
     }
     
 }

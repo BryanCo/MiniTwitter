@@ -10,13 +10,16 @@ import javax.swing.JPanel;
  *
  * @author Bryan
  */
-public class ButtonPanel extends JPanel implements ActionListener {
-    private ButtonPanelController control;
-    private JButton button;
+public class ShowUserTotalButton  extends JPanel implements ActionListener {
     
-    ButtonPanel(String buttonText, ButtonPanelController control){
+    private ShowUserTotalController control;
+    private JButton button;
+    private String originalButtonText;
+    
+    public ShowUserTotalButton(String buttonText, ShowUserTotalController control) {
         this.control = control;
         this.button = new JButton(buttonText);
+        this.originalButtonText = buttonText;
         
         this.setLayout(new BorderLayout());
         this.add(this.button,BorderLayout.CENTER);
@@ -30,9 +33,10 @@ public class ButtonPanel extends JPanel implements ActionListener {
         return button;
     }
     
-    @Override
     public void actionPerformed(ActionEvent ae) {
-        control.doAction();
+        this.control.doAction();
+        String b = this.originalButtonText + ": " + this.control.getUserTotal();
+        button.setText(b);
     }
-
+    
 }

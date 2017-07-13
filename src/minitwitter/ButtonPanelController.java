@@ -8,12 +8,14 @@ import javax.swing.JTextField;
  */
 abstract class ButtonPanelController implements ControllerInterface{
     protected TreeView tree;
-    
+
     ButtonPanelController(TreeView tree){
         this.tree = tree;
     }
 
-    public void doAction() {
-        
+    public TreeView getTree() {
+        return tree;
     }
+    
+    public void doAction(){};
 }

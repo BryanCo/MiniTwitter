@@ -40,7 +40,7 @@ public class AdminWindow extends JFrame{
         ButtonPanel openUsers = new ButtonPanel("Open User View", openUserControllerInstance);
         
         controlPanel.add(openUsers);
-        controlPanel.add(new UserFunctionsPanel());
+        controlPanel.add(new UserFunctionsPanel(this.tree));
         
         this.add(controlPanel);
         

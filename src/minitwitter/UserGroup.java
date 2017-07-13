@@ -6,7 +6,7 @@ import java.util.List;
  *
  * @author Bryan
  */
-public class UserGroup implements User {
+public class UserGroup implements User, Visitable {
     private String userID;
     private List<User> members;
     private List<User> followers;
@@ -53,5 +53,10 @@ public class UserGroup implements User {
     @Override
     public void joinGroup() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

@@ -11,11 +11,12 @@ import java.util.Observer;
  *
  * @author Bryan
  */
-public class IndividualUser extends Observable implements User, Observer {
+public class IndividualUser extends Observable implements User, Observer, Visitable {
     private String userID;
     private Tweet recentTweet;
     private List<String> following = new ArrayList<String>();
     private List<Tweet> newsFeed = new ArrayList<>();
+    private List<Tweet> myTweets = new ArrayList<>();
     
     IndividualUser(String userID){
         this.userID = userID;
@@ -26,7 +27,11 @@ public class IndividualUser extends Observable implements User, Observer {
     }
     
     public List<Tweet> getNewsFeed(){
-        return newsFeed;
+        return this.newsFeed;
+    }
+    
+    public List<Tweet> getMyTweets(){
+        return this.myTweets;
     }
     
     public void addToIAmFollowing(String userName){
@@ -43,7 +48,8 @@ public class IndividualUser extends Observable implements User, Observer {
     
     @Override
     public void tweet(Tweet tweet){
-        newsFeed.add(tweet);
+        this.newsFeed.add(tweet);
+        this.myTweets.add(tweet);
         this.recentTweet = tweet;
         notifyFollowers();
     }
@@ -93,5 +99,10 @@ public class IndividualUser extends Observable implements User, Observer {
         }
         
     }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+  }
 
 }
