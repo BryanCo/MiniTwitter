@@ -10,5 +10,5 @@ package minitwitter;
  * @author Bryan
  */
 public interface Tweet {
-    
+    public String getTweet();
 }

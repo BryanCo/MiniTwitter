@@ -36,13 +36,8 @@ public class UserGroup implements User {
     }
     
     @Override
-    public void tweet(){
+    public void tweet(Tweet tweet){
         
-    }
-
-    @Override
-    public void followUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

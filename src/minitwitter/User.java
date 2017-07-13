@@ -1,12 +1,12 @@
 package minitwitter;
 
+
 /**
  *
  * @author Bryan
  */
 public interface User {
-    public void tweet();
-    public void followUser();
+    public void tweet(Tweet tweet);
     public boolean isUserGroup();
     public void notifyFollowers();
     public void updateNewsFeed();

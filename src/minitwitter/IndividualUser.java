@@ -1,6 +1,9 @@
 package minitwitter;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 
 
@@ -8,13 +11,11 @@ import java.util.List;
  *
  * @author Bryan
  */
-public class IndividualUser implements User {
+public class IndividualUser extends Observable implements User, Observer {
     private String userID;
-    private UserGroup group;
-    private List<User> followers;
-    private List<User> following;
-    private List<Tweet> myTweets;
-    private List<Tweet> newsFeed;
+    private Tweet recentTweet;
+    private List<String> following = new ArrayList<String>();
+    private List<Tweet> newsFeed = new ArrayList<>();
     
     IndividualUser(String userID){
         this.userID = userID;
@@ -24,19 +25,34 @@ public class IndividualUser implements User {
         
     }
     
-    @Override
-    public void followUser(){
-        
+    public List<Tweet> getNewsFeed(){
+        return newsFeed;
+    }
+    
+    public void addToIAmFollowing(String userName){
+        following.add(userName);
+    }
+    
+    public List<String> getIAmFollowing(){
+        return following;
+    }
+    
+    public Tweet getRecentTweet(){
+        return recentTweet;
     }
     
     @Override
-    public void tweet(){
-        
+    public void tweet(Tweet tweet){
+        newsFeed.add(tweet);
+        this.recentTweet = tweet;
+        notifyFollowers();
     }
     
     @Override
     public void notifyFollowers(){
-        
+        setChanged();
+        String args = "followers";
+        notifyObservers(args);
     }
     
     @Override
@@ -63,4 +79,19 @@ public class IndividualUser implements User {
     public void acceptFollower() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public void update(Observable observable, Object arg)
+    {
+
+        if("followers".equals(arg)){
+            IndividualUser user = (IndividualUser) observable;
+            newsFeed.add(user.getRecentTweet());
+            setChanged();
+            String args = "controller";
+            notifyObservers(args);
+        }
+        
+    }
+
 }
