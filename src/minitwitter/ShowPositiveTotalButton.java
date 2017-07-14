@@ -10,13 +10,13 @@ import javax.swing.JPanel;
  *
  * @author Bryan
  */
-public class ShowPositiveTotalButton extends JPanel implements ActionListener {
+public class ShowPositiveTotalButton extends JPanel implements ActionListener,ShowTotalButton {
 
     private ShowPositveTotalController control;
     private JButton button;
     private String originalButtonText;
     
-    public ShowPositiveTotalButton(String buttonText, ShowPositveTotalController control) {
+    ShowPositiveTotalButton(String buttonText, ShowPositveTotalController control) {
         this.control = control;
         this.button = new JButton(buttonText);
         this.originalButtonText = buttonText;

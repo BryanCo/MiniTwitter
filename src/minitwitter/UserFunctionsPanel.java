@@ -17,21 +17,16 @@ public class UserFunctionsPanel extends JPanel {
         this.setLayout(new GridLayout(2,2));
         
         ShowUserTotalController showUserTotalController = new ShowUserTotalController(this.tree);
-        ShowUserTotalButton showUserTotalButton = new ShowUserTotalButton("Show User Total", showUserTotalController);
+        this.add(new ShowUserTotalButton("Show User Total", showUserTotalController));
         
         ShowGroupTotalController showGroupTotalController = new ShowGroupTotalController(this.tree);
-        ShowGroupTotalButton showGroupTotalButton = new ShowGroupTotalButton("Show Group Total", showGroupTotalController);
+        this.add(new ShowGroupTotalButton("Show Group Total", showGroupTotalController));
 
         ShowMessageTotalController showMessageTotalController = new ShowMessageTotalController(this.tree);
-        ShowMessageTotalButton showMessageTotalButton = new ShowMessageTotalButton("Show Messages Total", showMessageTotalController);
+        this.add(new ShowMessageTotalButton("Show Messages Total", showMessageTotalController));
         
         ShowPositveTotalController showPositveTotalController = new ShowPositveTotalController(this.tree);
-        ShowPositiveTotalButton showPositiveTotalButton = new ShowPositiveTotalButton("Show Messages Total", showPositveTotalController);
-        
-        this.add(showUserTotalButton);
-        this.add(showGroupTotalButton);
-        this.add(showMessageTotalButton);
-        this.add(showPositiveTotalButton);
+        this.add(new ShowPositiveTotalButton("Show Messages Total", showPositveTotalController));
     }
     
 }

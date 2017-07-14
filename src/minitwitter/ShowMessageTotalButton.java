@@ -10,13 +10,13 @@ import javax.swing.JPanel;
  *
  * @author Bryan
  */
-public class ShowMessageTotalButton extends JPanel implements ActionListener {
+public class ShowMessageTotalButton extends JPanel implements ActionListener,ShowTotalButton {
 
     private ShowMessageTotalController control;
     private JButton button;
     private String originalButtonText;
     
-    public ShowMessageTotalButton(String buttonText, ShowMessageTotalController control) {
+    ShowMessageTotalButton(String buttonText, ShowMessageTotalController control) {
         this.control = control;
         this.button = new JButton(buttonText);
         this.originalButtonText = buttonText;

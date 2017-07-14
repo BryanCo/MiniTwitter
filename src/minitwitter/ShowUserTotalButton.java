@@ -10,13 +10,13 @@ import javax.swing.JPanel;
  *
  * @author Bryan
  */
-public class ShowUserTotalButton  extends JPanel implements ActionListener {
+public class ShowUserTotalButton  extends JPanel implements ActionListener,ShowTotalButton {
     
     private ShowUserTotalController control;
     private JButton button;
     private String originalButtonText;
     
-    public ShowUserTotalButton(String buttonText, ShowUserTotalController control) {
+    ShowUserTotalButton(String buttonText, ShowUserTotalController control) {
         this.control = control;
         this.button = new JButton(buttonText);
         this.originalButtonText = buttonText;
@@ -33,6 +33,7 @@ public class ShowUserTotalButton  extends JPanel implements ActionListener {
         return button;
     }
     
+    @Override
     public void actionPerformed(ActionEvent ae) {
         this.control.doAction();
         String b = this.originalButtonText + ": " + this.control.getUserTotal();

@@ -10,13 +10,13 @@ import javax.swing.JPanel;
  *
  * @author Bryan
  */
-public class ShowGroupTotalButton extends JPanel implements ActionListener {
+public class ShowGroupTotalButton extends JPanel implements ActionListener,ShowTotalButton {
     
     private ShowGroupTotalController control;
     private JButton button;
     private String originalButtonText;
     
-    public ShowGroupTotalButton(String buttonText, ShowGroupTotalController control) {
+    ShowGroupTotalButton(String buttonText, ShowGroupTotalController control) {
         this.control = control;
         this.button = new JButton(buttonText);
         this.originalButtonText = buttonText;
