@@ -11,6 +11,7 @@ import javax.swing.tree.DefaultTreeModel;
 /**
  *
  * @author Bryan
+ * Displays the news feed for this User.
  */
 public class TweetPanel extends JPanel {
     

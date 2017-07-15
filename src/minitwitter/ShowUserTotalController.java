@@ -6,6 +6,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 /**
  *
  * @author Bryan
+ * Controller for the "Show User Total" button.
  */
 public class ShowUserTotalController {
     

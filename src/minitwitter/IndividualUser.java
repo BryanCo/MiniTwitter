@@ -10,6 +10,9 @@ import java.util.Observer;
 /**
  *
  * @author Bryan
+ * Is a User representing an individual user in this program.  Has to observe other
+ * IndividualUsers as well as be observable (Observer design pattern). Needs to 
+ * be Visitable by the user total functions (visitor pattern).
  */
 public class IndividualUser extends Observable implements User, Observer, Visitable {
     private String userID;

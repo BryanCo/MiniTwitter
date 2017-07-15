@@ -6,6 +6,8 @@ import javax.swing.tree.DefaultTreeModel;
 /**
  *
  * @author Bryan
+ * This is the tree displayed in the Admin window.  I also doubles as the data 
+ * model storing all users.
  */
 public class UserTree extends TreeView{
     DefaultTreeModel model;

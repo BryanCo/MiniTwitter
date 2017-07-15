@@ -4,6 +4,7 @@ package minitwitter;
 /**
  *
  * @author Bryan
+ * Interface for the IndividualUser and UserGroup.
  */
 public interface User extends Visitable{
     public void tweet(Tweet tweet);

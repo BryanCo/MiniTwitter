@@ -10,6 +10,8 @@ import javax.swing.JTextField;
 /**
  *
  * @author Bryan
+ * Creates a panel and textbox that refference a TextBoxController. This is a View component
+ * of a MVC design pattern.
  */
 public class TextBoxAction extends JPanel implements ActionListener {
     

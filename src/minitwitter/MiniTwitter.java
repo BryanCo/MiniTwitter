@@ -3,12 +3,10 @@ package minitwitter;
 /**
  *
  * @author Bryan
+ * Driver class for start.
  */
 public class MiniTwitter {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         AdminWindow.getInstance();
     }

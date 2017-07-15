@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 /**
  *
  * @author Bryan
+ * A panel with a button that references a ButtonPanelController
  */
 public class ButtonPanel extends JPanel implements ActionListener {
     private ButtonPanelController control;

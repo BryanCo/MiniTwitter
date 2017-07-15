@@ -3,13 +3,12 @@ package minitwitter;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- *
- * @author Bryan
+ *  @author Bryan
+ * Main window for program.  Note this class is a sinlgeton.
  */
 public class AdminWindow extends JFrame{
     UserTree tree;

@@ -7,6 +7,8 @@ import javax.swing.JTextField;
 /**
  *
  * @author Bryan
+ * Controller adds tweet to user. Obeserves thisUser for updates to newsfeed and 
+ * updates the tweetPanel.
  */
 public class PostTweetController extends TextBoxController implements Observer {
 

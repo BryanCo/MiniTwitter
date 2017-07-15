@@ -7,6 +7,13 @@ import javax.swing.JPanel;
 /**
  *
  * @author Bryan
+ * Creates the panel with "Show User Total", "Show Group Total", "Show Messages Total",
+ * "Show Messages Total" buttons and their controllers.
+ * 
+ * TODO: When I tried to program to the ShowTotalButton interface the code would
+ * work.  Ideally the four controller instantiations would be stored in ShowTotalButton
+ * variables.
+ * 
  */
 public class UserFunctionsPanel extends JPanel {
     

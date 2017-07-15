@@ -5,6 +5,7 @@ import javax.swing.JTextField;
 /**
  *
  * @author Bryan
+ * The controller for the Add User button and textbox in the Admin window.
  */
 public class AddUserController extends TextBoxController {
     

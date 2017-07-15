@@ -12,6 +12,7 @@ import javax.swing.tree.TreeSelectionModel;
 /**
  *
  * @author Bryan
+ * The abstract tree class. 
  */
 abstract class TreeView extends JPanel implements TreeSelectionListener {
     private JTree tree;

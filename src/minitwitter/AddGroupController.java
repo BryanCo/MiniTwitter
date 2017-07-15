@@ -5,6 +5,7 @@ import javax.swing.JTextField;
 /**
  *
  * @author Bryan
+ * The controller for the Add Group button and textbox in the Admin window.
  */
 public class AddGroupController extends TextBoxController {
     

@@ -8,6 +8,7 @@ package minitwitter;
 /**
  *
  * @author Bryan
+ * The interface for GenericTweet.
  */
 public interface Tweet {
     public String getTweet();

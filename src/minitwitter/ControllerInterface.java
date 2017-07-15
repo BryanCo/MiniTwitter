@@ -5,11 +5,10 @@
  */
 package minitwitter;
 
-import javax.swing.JTextField;
-
 /**
  *
  * @author Bryan
+ * Interface for the TextBoxController
  */
 public interface ControllerInterface {
 

@@ -7,6 +7,7 @@ import java.util.List;
 /**
  *
  * @author Bryan
+ * 
  */
 public class UserFunctions implements Visitor {
     private int userTotal = 0;

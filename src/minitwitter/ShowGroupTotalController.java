@@ -6,6 +6,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 /**
  *
  * @author Bryan
+ * Controller for the "Show Group Total" button.
  */
 public class ShowGroupTotalController {
     private int groupTotal;

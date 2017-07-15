@@ -6,6 +6,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 /**
  *
  * @author Bryan
+ * Controller for the "Show Message Total" button.
+ * 
  */
 public class ShowMessageTotalController {
     private int tweetTotal;

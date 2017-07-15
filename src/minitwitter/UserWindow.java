@@ -11,6 +11,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 /**
  *
  * @author Bryan
+ * This is the window for displaying individualUsers.
  */
 public class UserWindow extends JFrame {
     IndividualUser thisUser;

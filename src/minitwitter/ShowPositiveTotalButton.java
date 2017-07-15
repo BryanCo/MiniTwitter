@@ -9,6 +9,10 @@ import javax.swing.JPanel;
 /**
  *
  * @author Bryan
+ * Creates a the "Show Positive Total" button.
+ * This is a bit of a bodge that I would like to revisit when less time constrained.
+ * Ideally a single class would work for all four buttons, but the code would
+ * not work the way I was trying to implement it.
  */
 public class ShowPositiveTotalButton extends JPanel implements ActionListener,ShowTotalButton {
 

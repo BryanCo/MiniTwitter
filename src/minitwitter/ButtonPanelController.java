@@ -5,6 +5,7 @@ import javax.swing.JTextField;
 /**
  *
  * @author Bryan
+ * Abstract class for a controller that references a TreeView data model.
  */
 abstract class ButtonPanelController implements ControllerInterface{
     protected TreeView tree;

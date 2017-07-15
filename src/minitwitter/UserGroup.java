@@ -5,6 +5,8 @@ import java.util.List;
 /**
  *
  * @author Bryan
+ * This is the class for the UserGroup.  Using the composite design pattern, it 
+ * contains functions that are not nessicarily relevent to it.
  */
 public class UserGroup implements User, Visitable {
     private String userID;

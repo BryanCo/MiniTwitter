@@ -11,6 +11,7 @@ import javax.swing.tree.DefaultTreeModel;
 /**
  *
  * @author Bryan
+ * Creates a panel that displays the contents of a list of strings.
  */
 public class ListPanel extends JPanel {
     

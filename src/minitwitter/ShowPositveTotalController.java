@@ -6,6 +6,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 /**
  *
  * @author Bryan
+ * Controller for the "Show Positive Total" button.
  */
 public class ShowPositveTotalController {
     private int positiveTotal;
