@@ -26,7 +26,7 @@ public class UserWindow extends JFrame {
             return;
         }
         
-        String windowTitle = "Mini Twitter - " + thisUser.toString();
+        String windowTitle = "Mini Twitter - " + thisUser.idWithTime();
         this.setTitle(windowTitle);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLayout(new GridLayout(4,1));

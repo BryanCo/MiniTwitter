@@ -1,5 +1,7 @@
 package minitwitter;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -20,9 +22,12 @@ public class IndividualUser extends Observable implements User, Observer, Visita
     private List<String> following = new ArrayList<String>();
     private List<Tweet> newsFeed = new ArrayList<>();
     private List<Tweet> myTweets = new ArrayList<>();
+    private long creationTime;
+    private long lastUpdateTime;
     
     IndividualUser(String userID){
         this.userID = userID;
+        this.creationTime = System.currentTimeMillis();
     }
     @Override
     public void joinGroup(){
@@ -48,12 +53,21 @@ public class IndividualUser extends Observable implements User, Observer, Visita
     public Tweet getRecentTweet(){
         return recentTweet;
     }
+
+    public long getCreationTime() {
+        return creationTime;
+    }
+
+    public long getLastUpdateTime() {
+        return lastUpdateTime;
+    }
     
     @Override
     public void tweet(Tweet tweet){
         this.newsFeed.add(tweet);
         this.myTweets.add(tweet);
         this.recentTweet = tweet;
+        this.lastUpdateTime = System.currentTimeMillis();
         notifyFollowers();
     }
     
@@ -74,6 +88,13 @@ public class IndividualUser extends Observable implements User, Observer, Visita
         return this.userID;
     }
 
+    public String idWithTime(){
+        DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+        String dateFormatted = formatter.format(creationTime);
+        String s = this.userID + ": " + dateFormatted;
+        return s;
+    }
+    
     @Override
     public boolean isUserGroup() {
         return false;

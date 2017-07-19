@@ -21,7 +21,7 @@ public class UserFunctionsPanel extends JPanel {
     
     UserFunctionsPanel(TreeView tree){
         this.tree = tree;
-        this.setLayout(new GridLayout(2,2));
+        this.setLayout(new GridLayout(3,2));
         
         ShowUserTotalController showUserTotalController = new ShowUserTotalController(this.tree);
         this.add(new ShowUserTotalButton("Show User Total", showUserTotalController));
@@ -34,6 +34,13 @@ public class UserFunctionsPanel extends JPanel {
         
         ShowPositveTotalController showPositveTotalController = new ShowPositveTotalController(this.tree);
         this.add(new ShowPositiveTotalButton("Show Messages Total", showPositveTotalController));
+        
+        ValidationController validationController = new ValidationController(this.tree);
+        this.add(new ValidationButton("Are all UserIDs valid?", validationController));
+        
+        MostRecentMessageController mostRecentMessageController = new MostRecentMessageController(this.tree);
+        this.add(new MostRecentMessageButton("User most recently active", mostRecentMessageController));
+        
     }
     
 }

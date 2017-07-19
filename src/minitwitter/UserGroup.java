@@ -1,5 +1,8 @@
 package minitwitter;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -12,9 +15,11 @@ public class UserGroup implements User, Visitable {
     private String userID;
     private List<User> members;
     private List<User> followers;
+    private long creationTime;
     
     UserGroup(String groupName){
         this.userID = groupName;
+        this.creationTime = System.currentTimeMillis();
     }
     
     @Override
@@ -25,6 +30,13 @@ public class UserGroup implements User, Visitable {
     @Override
     public String toString(){
         return this.userID;
+    }
+    
+    public String idWithTime(){
+        DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+        String dateFormatted = formatter.format(creationTime);
+        String s = this.userID + ": " + dateFormatted;
+        return s;
     }
     
     @Override

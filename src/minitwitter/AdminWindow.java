@@ -19,7 +19,7 @@ public class AdminWindow extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setSize(dim.width/2, dim.height/2);
+        this.setSize(1024, dim.height/2);
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2); 
         this.setLayout(new GridLayout(1,2));
         
@@ -33,7 +33,7 @@ public class AdminWindow extends JFrame{
         controlPanel.add(new TextBoxAction("UserID", "Add User", addUserControllerInstance));
         
         TextBoxController addGroupControllerInstance = new AddGroupController(this.tree);
-        controlPanel.add(new TextBoxAction("Group Name", "Add Group", addGroupControllerInstance));
+        controlPanel.add(new TextBoxAction("GroupName", "Add Group", addGroupControllerInstance));
         
         ButtonPanelController openUserControllerInstance = new OpenUserController(this.tree);
         ButtonPanel openUsers = new ButtonPanel("Open User View", openUserControllerInstance);
